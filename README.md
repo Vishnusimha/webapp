@@ -18,4 +18,5 @@
 8. Contact
 9. Upcoming
 
-
+#### Side Navigation
+Added Side navigation in the Upcoming.html page because in the initial development I have not added navigation in this page. So now, I have added a side navigation with use of Java Script.

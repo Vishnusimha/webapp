@@ -7,14 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./stylesheets/fonts.css">
     <style>
-        * {
-            box-sizing: border-box;
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            background-color: #333652;
+            transition: margin-left .5s;
         }
 
         body {
+            margin: 0 auto;
+            transition: background-color .5s;
             color: #333652;
             background-color: #333652;
             font-family: Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         /* The actual timeline (the vertical ruler) */
@@ -118,69 +159,97 @@
 </head>
 
 <body>
-    <!-- Special font heading so added stylesheet related to it -->
-    <h1
-        style="color: #9edde0; display: flex; flex-direction: row; justify-content: center; font-family: 'roca-one-light'; font-size: 50px;">
-        Plan your Special day</h1>
-    <a href="index.html">
-        <h1 style="color: #9edde0; margin-left: 30px;">Back</h1>
-    </a>
-
-    <!-- Sample content for every division -->
-    <div class="timeline">
-        <div class="container left">
-            <div class="content">
-                <h2>Valentine's Day</h2>
-                <p>Balloons.. Balloons...</p>
-                <p>Order Special Balloon Bouquets Soon...</p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <h2>Mothers Day</h2>
-                <p>Surprise them with balloons</p>
-            </div>
-        </div>
-        <div class="container left">
-            <div class="content">
-                <h2>Fathers Day</h2>
-                <p>Surprise them with balloons</p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <h2>Graduation Day</h2>
-                <p>Think about gifting customised graduation cap balloons for your loved ones</p>
-            </div>
-        </div>
-        <div class="container left">
-            <div class="content">
-                <h2>Birthday</h2>
-                <p>Gift Balloon Bouquets</p>
-                <p>Think about Balloon wall decoration for your loved ones</p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <h2>Anniversary</h2>
-                <p>Celebrate any anniversary with lovely balloons</p>
-            </div>
-        </div>
+    <!--Navigation-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="prices.html">Prices</a>
+        <a href="safety.html">Safety</a>
+        <a href="faq.html">FAQ'S</a>
+        <a href="contact.html">Contact</a>
     </div>
 
-    <!--  General footer -->
+    <div id="main">
+        <span style=" margin-left: 20px; margin-top: 20px; font-size:50px;cursor:pointer ;color: #f1f1f1;"
+            onmousemove="openNav()" onclick="openNav()">&#9776;</span>
+        <!-- Special font heading so added stylesheet related to it -->
+        <h1
+            style="color: #9edde0; display: flex; flex-direction: row; justify-content: center; font-family: 'roca-one-light'; font-size: 50px;">
+            Plan your Special day</h1>
+        <a href="index.html">
+            <h1 style="color: #9edde0; margin-left: 30px;">Back</h1>
+        </a>
 
-    <footer class="footer">
-        <div class="footercontent">
-            <p style="color:white; padding:20px 0 0 40px">Contact us</p>
-            <div style="margin:2px 0 0 20px">
-                <a href="https://www.instagram.com/cloud9balloondecor/"><img class="footericon"
-                        src="./images/insta.png"></a>
-                <a href="https://www.facebook.com/profile.php?id=100086199496979"><img class="footericon"
-                        src="./images/fb.png"></a>
+        <!-- Sample content for every division -->
+        <div class="timeline">
+            <div class="container left">
+                <div class="content">
+                    <h2>Valentine's Day</h2>
+                    <p>Balloons.. Balloons...</p>
+                    <p>Order Special Balloon Bouquets Soon...</p>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="content">
+                    <h2>Mothers Day</h2>
+                    <p>Surprise her with lovely balloon boquets</p>
+                </div>
+            </div>
+            <div class="container left">
+                <div class="content">
+                    <h2>Fathers Day</h2>
+                    <p>Surprise him with lovely balloon boquets</p>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="content">
+                    <h2>Graduation Day</h2>
+                    <p>Think about gifting customised graduation cap balloons for your loved ones</p>
+                </div>
+            </div>
+            <div class="container left">
+                <div class="content">
+                    <h2>Birthday</h2>
+                    <p>Gift Balloon Bouquets</p>
+                    <p>Think about Balloon wall decoration for your loved ones</p>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="content">
+                    <h2>Anniversary</h2>
+                    <p>Celebrate any anniversary with lovely balloons</p>
+                </div>
             </div>
         </div>
-    </footer>
+        <!--  General footer -->
+        <footer class="footer">
+            <div class="footercontent">
+                <p style="color:white; padding:20px 0 0 40px">Contact us</p>
+                <div style="margin:2px 0 0 20px">
+                    <a href="https://www.instagram.com/cloud9balloondecor/"><img class="footericon"
+                            src="./images/insta.png"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100086199496979"><img class="footericon"
+                            src="./images/fb.png"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Java scrpt added for the side navigation transistion animation. -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
 </body>
 
 </html>
