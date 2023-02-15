@@ -1,32 +1,32 @@
-const personalForm = document.getElementById("personalForm");
+const corporateForm = document.getElementById("corporateForm");
 
-personalForm.addEventListener("submit", function (event) {
+corporateForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    savePersonalFormData();
+    saveCorporateFormData();
 });
 
-function savePersonalFormData() {
-    const formData = new FormData(document.getElementById('personalForm'));
-    const formValues = Object.fromEntries(formData.entries());
-    const json = JSON.stringify(formValues);
+function saveCorporateFormData() {
+    const formData = new FormData(document.getElementById('corporateForm'));
+    const corporateFormValues = Object.fromEntries(formData.entries());
+    const json = JSON.stringify(corporateFormValues);
     var wholedata;
 
-    if (localStorage.getItem('personalForm') != null) {
+    if (localStorage.getItem('corporateForm') != null) {
         alert("IF");
-        wholedata = [localStorage.getItem('personalForm')];
+        wholedata = [localStorage.getItem('corporateForm')];
         wholedata.push(json);
-        localStorage.setItem('personalForm', wholedata);
+        localStorage.setItem('corporateForm', wholedata);
     } else {
         alert("else");
         wholedata = [];
         wholedata.push(json);
-        localStorage.setItem('personalForm', wholedata);
+        localStorage.setItem('corporateForm', wholedata);
     }
     // alert(json);
 }
 
-function getPersonalFormData() {
-    const retrivedJsonString = localStorage.getItem('personalForm');
+function getFormData() {
+    const retrivedJsonString = localStorage.getItem('corporateForm');
     // alert(retrivedJsonString);
 
     // {"name":"vishnu","email":"vishnusimha98@gmail.com"}
@@ -37,7 +37,7 @@ function getPersonalFormData() {
     const table = document.createElement('table');
     const thead = document.createElement('thead');
     const tbody = document.createElement('tbody');
-    const columns = ['plan no', 'sponsor', 'name', 'email', 'occasion', 'occasiondate', 'occasiontime', 'location', 'Anniversary', 'MothersDay', 'FathersDay', 'country'];
+    const columns = ['plan no', 'sponsor', 'companyname', 'sponsoremail', 'companyemail', 'occasion', 'occasiondate', 'occasiontime', 'location', , 'country', 'officeparty', 'milestoneevents', 'achievements'];
 
     // Create table header
     const headerRow = document.createElement('tr');
@@ -61,6 +61,10 @@ function getPersonalFormData() {
 
     table.appendChild(thead);
     table.appendChild(tbody);
-    document.getElementById('personaltable').appendChild(table);
+    document.getElementById('corporatetable').appendChild(table);
 }
+
+
+
+
 

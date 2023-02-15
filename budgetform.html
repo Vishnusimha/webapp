@@ -3,37 +3,36 @@
 
 <head>
     <style>
-        table,
-        td {
-            border: 1px solid black;
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            /* optional, adjust as needed */
+            margin: 0 auto;
         }
 
-        table {
-            border: 1px solid silver
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
 
         th {
-            background-color: #ccc;
+            background-color: darkmagenta;
+            /* violet color */
+            color: #fff;
+            /* white text color */
         }
 
-        tbody tr:nth-child(even) {
-            background-color: #abe113;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+            /* light grey background color for even rows */
         }
 
-        a:link {
-            color: #0e630f
-        }
-
-        a:hover {
-            color: #ec8007
-        }
-
-        a:active {
-            color: #602206
-        }
-
-        a:visited {
-            color: #4f628e
+        tr:hover {
+            background-color: #D8BFD8;
+            /* lavender color on hover */
         }
 
 
@@ -54,13 +53,11 @@
         }
 
         .planCard {
-            background-image: url("./images/background.png");
-            margin: 20px 20px 0 0;
+            background-color: antiquewhite;
+            margin: 20px 20px 20px 20px;
             padding: 20px 20px 20px 20px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             transition: 0.3s;
-            margin-left: 25%;
-            width: 50%;
             height: 100%;
             border-radius: 10px;
             display: flex;
@@ -72,11 +69,14 @@
 </head>
 
 <body>
+    <script src="./script.js"></script>
+    <script src="./corporate.js"></script>
+
     <div class="formcard">
         <form id="personalForm">
             <h1>Personal party Planner</h1>
-            <label for="planno">Plan No:</label>
-            <input type="number" id="planno" name="planno" placeholder="Enter Plan Number">
+            <label for="plan no">Plan No:</label>
+            <input type="number" id="plan no" name="plan no" placeholder="Enter Plan Number">
             <br><br>
 
             <label for="sponsor">Sponsor Name:</label>
@@ -95,16 +95,17 @@
             <input type="text" id="occasion" name="occasion">
             <br><br>
 
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location">
-            <br><br>
-
             <label for="date">Occasion date:</label>
             <input type="date" id="date" name="date">
             <br><br>
 
             <label for="occasiontime">Occasion time:</label>
             <input id="occasiontime" name="occasiontime" type="time">
+            <br><br>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location">
+            <br><br>
 
             <p>Click on other interested Occasions to order with us?</p>
 
@@ -133,24 +134,22 @@
     </div>
 
     <div class="planCard">
-        <h4>Your list of Plans</h4>
+        <h4>Your list of Personal Plans</h4>
         <div id="personaltable"></div>
         <br><br>
-        <button onclick="getFormData()" type="button">Click to see Your Plans</button>
+        <button onclick="getPersonalFormData()" type="button">Click to see Your Plans</button>
         <br><br>
         <br><br>
         <br><br>
     </div>
 
-
-
-    <!-- <br><br>
+    <br><br>
     <br><br>
     <div class="formcard">
-        <form id="companyForm">
+        <form id="corporateForm">
             <h1>Corporate Event Planner</h1>
-            <label for="planno">Plan No:</label>
-            <input type="number" id="planno" name="planno" placeholder="Enter Plan Number">
+            <label for="plan no">Plan No:</label>
+            <input type="number" id="plan no" name="plan no" placeholder="Enter Plan Number">
             <br><br>
 
             <label for="sponsor">Sponsor Name:</label>
@@ -176,14 +175,13 @@
             <input id="occasiontime" name="occasiontime" type="time">
             <br><br>
 
+            <label for="occasiondate">Occasion date:</label>
+            <input type="date" id="occasiondate" name="occasiondate">
+            <br><br>
+
             <label for="location">Location:</label>
             <input type="text" id="location" name="location">
             <br><br>
-
-            <label for="date">Occasion date:</label>
-            <input type="date" id="date" name="date">
-            <br><br>
-
 
             <p>Click on other interested Occasions to order with us?</p>
 
@@ -209,12 +207,17 @@
             <input type="reset">
             <button type="submit">Submit</button>
         </form>
-    </div> -->
+    </div>
 
-
-
-    <script src="./script.js"></script>
-
+    <div class="planCard">
+        <h4>Your list of Corporate Plans</h4>
+        <div id="corporatetable"></div>
+        <br><br>
+        <button onclick="getFormData()" type="button">Click to see Your Plans</button>
+        <br><br>
+        <br><br>
+        <br><br>
+    </div>
 </body>
 
 </html>
