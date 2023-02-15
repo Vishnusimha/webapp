@@ -2,7 +2,6 @@
 
 ## Assignment 2 / Java Script
 
-
 ## How to Check ?
 
 **Just open the index.html file in mozilla browser and test the website**
@@ -19,4 +18,12 @@
 9. Upcoming
 
 #### Side Navigation
-Added Side navigation in the Upcoming.html page because in the initial development I have not added navigation in this page. So now, I have added a side navigation with use of Java Script.
+Added Side navigation in the **Upcoming.html** page because in the initial development I have not added navigation in this page. So now, I have added a side navigation with use of ***Java Script**.*
+
+#### HTML FORMS
+Added HTML forms in **personalpartyplanner.html** and **corporateeventplanner.html** to generate a event plan and saved the form data into  **HTML local storage** using ***Javascript***
+
+#### Saving HTML FORMS USER INPUT into HTML LOCAL STORAGE
+Added HTML forms in **personalpartyplanner.html** and **corporateeventplanner.html** to generate a event plan and saved the form data into  **HTML local storage** using ***Javascript***
+
+**Javascript** files are added in a separate **javascript folder** and the files are **personal.js** and **corporate.js**
