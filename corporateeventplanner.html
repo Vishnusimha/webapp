@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
     <style>
         table {
             border-collapse: collapse;
@@ -65,6 +66,24 @@
             justify-content: start;
             align-items: center;
         }
+
+        h1 {
+            font-family: 'roca-one-light', fantasy;
+            text-align: center;
+            font-size: 40px;
+            color: black;
+        }
+
+        .footer {
+            border-radius: 4px;
+            height: 150px;
+            width: inherit;
+            background-color: #625B71;
+        }
+
+        .footericon {
+            margin: 20px 20px 20px 20px;
+        }
     </style>
 </head>
 
@@ -72,83 +91,16 @@
     <script src="./script.js"></script>
     <script src="./corporate.js"></script>
 
-    <div class="formcard">
-        <form id="personalForm">
-            <h1>Personal party Planner</h1>
-            <label for="plan no">Plan No:</label>
-            <input type="number" id="plan no" name="plan no" placeholder="Enter Plan Number">
-            <br><br>
+    <a href="corporate.html" style="color:black;">
+        <span style="color:black; margin-left: 20px; margin-top: 20px; font-size:30px;cursor:pointer;">&#9664;
+            Back</span>
+    </a>
 
-            <label for="sponsor">Sponsor Name:</label>
-            <input type="text" id="sponsor" name="sponsor" placeholder="From Whom?">
-            <br><br>
+    <h1>Corporate Event Planner</h1>
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="To Whom?">
-            <br><br>
-
-            <label for="email">Sponsor Email:</label>
-            <input type="email" id="email" name="email">
-            <br><br>
-
-            <label for="occasion">Occasion:</label>
-            <input type="text" id="occasion" name="occasion">
-            <br><br>
-
-            <label for="date">Occasion date:</label>
-            <input type="date" id="date" name="date">
-            <br><br>
-
-            <label for="occasiontime">Occasion time:</label>
-            <input id="occasiontime" name="occasiontime" type="time">
-            <br><br>
-
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location">
-            <br><br>
-
-            <p>Click on other interested Occasions to order with us?</p>
-
-            <input type="checkbox" id="FathersDay" name="FathersDay" value="Yes">
-            <label for="vehicle1">Fathers Day</label><br>
-
-            <input type="checkbox" id="MothersDay" name="MothersDay" value="Yes">
-            <label for="MothersDay">Mothers Day</label><br>
-
-            <input type="checkbox" id="Anniversary" name="Anniversary" value="Yes">
-            <label for="Anniversary">Anniversary</label><br><br>
-
-            <label for="country">Country:</label>
-            <select name="country">
-                <option selected="" value="Default">(Please select a country)</option>
-                <option value="Ireland">Ireland</option>
-                <option value="NorthernIreland">Northern Ireland</option>
-                <option value="India">India</option>
-            </select>
-            <br><br>
-
-
-            <input type="reset">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-
-    <div class="planCard">
-        <h4>Your list of Personal Plans</h4>
-        <div id="personaltable"></div>
-        <br><br>
-        <button onclick="getPersonalFormData()" type="button">Click to see Your Plans</button>
-        <br><br>
-        <br><br>
-        <br><br>
-    </div>
-
-    <br><br>
-    <br><br>
-    
     <div class="formcard">
         <form id="corporateForm">
-            <h1>Corporate Event Planner</h1>
+
             <label for="plan no">Plan No:</label>
             <input type="number" id="plan no" name="plan no" placeholder="Enter Plan Number">
             <br><br>
@@ -212,13 +164,14 @@
 
     <div class="planCard">
         <h4>Your list of Corporate Plans</h4>
+        <br>
         <div id="corporatetable"></div>
         <br><br>
         <button onclick="getFormData()" type="button">Click to see Your Plans</button>
         <br><br>
-        <br><br>
-        <br><br>
     </div>
+    <br><br>
 </body>
 
 </html>
+
