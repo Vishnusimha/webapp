@@ -3,11 +3,9 @@ const personalForm = document.getElementById("personalForm");
 personalForm.addEventListener("submit", function (event) {
     event.preventDefault();
     savePersonalFormData();
-    alert('personalForm.addEventListener');
 });
 
 function savePersonalFormData() {
-    alert('savePersonalFormData');
     const formData = new FormData(document.getElementById('personalForm'));
     const formValues = Object.fromEntries(formData.entries());
     const json = JSON.stringify(formValues);
@@ -28,7 +26,6 @@ function savePersonalFormData() {
 }
 
 function getPersonalFormData() {
-    alert('getPersonalFormData');
     const retrivedJsonString = localStorage.getItem('personalForm');
     // alert(retrivedJsonString);
 
