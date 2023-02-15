@@ -25,7 +25,7 @@ function saveCorporateFormData() {
     // alert(json);
 }
 
-function getFormData() {
+function getCorporateFormData() {
     const retrivedJsonString = localStorage.getItem('corporateForm');
     // alert(retrivedJsonString);
 
