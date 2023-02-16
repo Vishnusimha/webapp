@@ -16,8 +16,6 @@ corporateForm.addEventListener("submit", function (event) {
     var location = document.getElementById("location").value;
 
     var test = "" + planNo + sponsor + companyname + sponsoremail + companyemail + occasion + occasiontime + occasiondate + location;
-
-    alert(validateEmail(sponsoremail));
     // testing all the inputs are not null
     if (planNo && sponsor && companyname && sponsoremail && companyemail && occasion && occasiondate && occasiontime && location != "" && (validateEmail(sponsoremail))) {
         saveCorporateFormData();
