@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./stylesheets/fonts.css">
     <style>
+        /*  */
         .sidenav {
             height: 100%;
             width: 0;
@@ -14,14 +15,16 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: #111;
+            background-color: #050A30;
             overflow-x: hidden;
+            /* added transistion for smooth movement of side navigation bar */
             transition: 0.5s;
             padding-top: 60px;
         }
 
         .sidenav a {
-            padding: 8px 8px 8px 32px;
+            /* side nav link and colors are cmodified here */
+            padding: 40px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
             color: #818181;
@@ -251,16 +254,17 @@
 
     <!-- Java scrpt added for the side navigation transistion animation. -->
     <script>
+        
+        // openNav fun sets the margin width so that it expands with some transistion to 250px
+        // 0.5s transistion added in CSS code of side nav
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("main").style.marginLeft = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
         }
-
+        // closeNav fun sets the margin width to 0 that it disappear with some transistion to 0px
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
-            document.body.style.backgroundColor = "white";
         }
     </script>
 </body>
