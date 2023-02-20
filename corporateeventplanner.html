@@ -160,6 +160,13 @@
         <br><br>
     </div>
 
+    <script>
+        // Script to click event handler to capture on each element
+        for (let elem of document.querySelectorAll('*')) {
+            elem.addEventListener("click", e => console.log("Capturing:", elem.tagName), true);
+        }
+    </script>
+
     <script src="./javascript/corporate.js"></script>
 </body>
 

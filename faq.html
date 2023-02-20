@@ -14,6 +14,17 @@
             width: 60%;
             padding: 40px;
             border-radius: 10px;
+            animation: rotate 8s linear 0s infinite forwards;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg) translate(-1em) rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg) translate(-1em) rotate(-360deg);
+            }
         }
     </style>
     <meta charset="utf-8" />

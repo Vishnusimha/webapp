@@ -54,6 +54,7 @@ function savePersonalFormData() {
     }
 }
 
+// Code explanation for the below method, is clearly written in corporate.js file. Please refer that. 
 function getPersonalFormData() {
     const retrivedJsonString = localStorage.getItem('personalForm');
 
@@ -90,7 +91,7 @@ function getPersonalFormData() {
 
     table.appendChild(thead);
     table.appendChild(tbody);
-    // getting html <div> tag by its element ID and peending created table to it 
+    // getting html <div> tag by its element ID and apending created table to it 
     document.getElementById('personaltable').appendChild(table);
 }
 

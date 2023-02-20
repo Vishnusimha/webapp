@@ -58,13 +58,16 @@ function saveCorporateFormData() {
     }
 }
 
+// This function retrieves data from the local storage of a web browser & converts it to a JSON and creates an HTML table based on the data.
 function getCorporateFormData() {
+    // retrieves a JSON string from local storage using the getItem() method and saves it in a variable called retrivedJsonString
     const retrivedJsonString = localStorage.getItem('corporateForm');
-
+    //  wrapping the JSON string in square brackets to create a valid JSON array string
     const jsonString = '[' + retrivedJsonString + ']';
 
-    const data = JSON.parse(jsonString);
+    const data = JSON.parse(jsonString); //JSON.parse() method to parse the JSON string and convert it to a JavaScript object
 
+    // creating a thead element for the table header and a tbody element for the table body
     const table = document.createElement('table');
     const thead = document.createElement('thead');
     const tbody = document.createElement('tbody');
@@ -73,30 +76,31 @@ function getCorporateFormData() {
 
     // Creates table header
     const headerRow = document.createElement('tr');
+    // headerRow variable creates the table's header row and adds each column name as a th element using a loop that iterates over the columns array
     columns.forEach(column => {
         const th = document.createElement('th');
         th.innerText = column;
         headerRow.appendChild(th);
     });
-    thead.appendChild(headerRow);
+    thead.appendChild(headerRow); // after creating the header row i am appending to table.
 
     // Creates table body
     data.forEach(item => {
+        // creates a new tr element for each object in the array
         const tr = document.createElement('tr');
         columns.forEach(column => {
+            // Here for each tr element, a td element is made for each column in the columns array and the innerText attribute of the current object is used to insert the value of that column as text.
             const td = document.createElement('td');
             td.innerText = item[column];
             tr.appendChild(td);
         });
-        tbody.appendChild(tr);
+        tbody.appendChild(tr); // again every tr element appending to the tbody..
     });
 
     table.appendChild(thead);
     table.appendChild(tbody);
 
-    // getting html <div> tag by its element ID and peending created table to it 
+    // Now created table element is appending to an HTML div element with an id of 'corporatetable'.. this tag i am
+    // getting from html <div> tag and i placed it in HTML file of corporateeventplanner.html
     document.getElementById('corporatetable').appendChild(table);
 }
-
-
-
