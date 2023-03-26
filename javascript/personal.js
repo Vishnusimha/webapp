@@ -12,9 +12,9 @@ personalForm.addEventListener("submit", function (event) {
     var occasiontime = document.getElementById("occasiontime").value;
     var date = document.getElementById("date").value;
     var location = document.getElementById("location").value;
-
+  
     // testing all the inputs are not null & validating mail formats
-    if (planNo && sponsor && name && sponsoremail && email && occasion && date && occasiontime && location != "" && (validateEmail(email))) {
+    if (planNo && sponsor && name && email && occasion && date && occasiontime && location != "" && (validateEmail(email))) {
         savePersonalFormData();
     } else {
         alert("Please enter all the values");
