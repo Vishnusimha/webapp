@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Cloud 9</title>
+    <meta name="viewport" content="width=device-width">
     <style>
         table {
             border-collapse: collapse;
@@ -88,8 +89,8 @@
 
     <div class="formcard">
         <form id="corporateForm">
-            <label for="plan no">Plan No:</label>
-            <input type="number" id="plan no" name="plan no" placeholder="Enter Plan Number">
+            <label for="planno">Plan No:</label>
+            <input type="number" id="planno" name="planno" placeholder="Enter Plan Number">
             <br><br>
 
             <label for="sponsor">Sponsor Name:</label>
@@ -135,12 +136,13 @@
             <label for="achievements">Achievements</label><br><br>
 
             <label for="country">Country:</label>
-            <select name="country">
+            <select name="country" title="Please select a country">
                 <option selected="" value="Default">(Please select a country)</option>
                 <option value="Ireland">Ireland</option>
                 <option value="NorthernIreland">Northern Ireland</option>
                 <option value="India">India</option>
             </select>
+
             <br><br>
 
             <input type="reset">

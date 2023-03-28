@@ -3,9 +3,9 @@ const corporateForm = document.getElementById("corporateForm");
 // this listener to the form gets triggred whn submit button is clicked 
 corporateForm.addEventListener("submit", function (event) {
     event.preventDefault();
-
+    alert("hello...");
     // Getting the form input values by the below sytax
-    var planNo = document.getElementById("plan no").value;
+    var planNo = document.getElementById("planno").value;
     var sponsor = document.getElementById("sponsor").value;
     var companyname = document.getElementById("companyname").value;
     var sponsoremail = document.getElementById("sponsoremail").value;
@@ -19,6 +19,7 @@ corporateForm.addEventListener("submit", function (event) {
     // testing all the inputs are not null
     if (planNo && sponsor && companyname && sponsoremail && companyemail && occasion && occasiondate && occasiontime && location != "" && (validateEmail(sponsoremail))) {
         saveCorporateFormData();
+        alert("saving...");
     } else {
         alert("Please enter all the values");
     }
@@ -40,9 +41,12 @@ function validateEmail(email) {
 
 
 function saveCorporateFormData() {
+    alert("saveCorporateFormData...");
     const formData = new FormData(document.getElementById('corporateForm'));
     const corporateFormValues = Object.fromEntries(formData.entries());
     const json = JSON.stringify(corporateFormValues);
+
+    sendCorporateForm(json);
     var wholedata;
     // checks if the personalForm JSON obj is already present 
     if (localStorage.getItem('corporateForm') != null) {
@@ -56,6 +60,30 @@ function saveCorporateFormData() {
         wholedata.push(json);
         localStorage.setItem('corporateForm', wholedata);
     }
+}
+
+function sendCorporateForm(json) {
+    alert("network call...");
+    fetch('http://localhost:8080/corporateform/post-corporate-form', {
+
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: json
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data received:', data);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
 }
 
 // This function retrieves data from the local storage of a web browser & converts it to a JSON and creates an HTML table based on the data.
@@ -72,7 +100,7 @@ function getCorporateFormData() {
     const thead = document.createElement('thead');
     const tbody = document.createElement('tbody');
     // Added column names of the table to create 
-    const columns = ['plan no', 'sponsor', 'companyname', 'sponsoremail', 'companyemail', 'occasion', 'occasiondate', 'occasiontime', 'location', , 'country', 'officeparty', 'milestoneevents', 'achievements'];
+    const columns = ['planno', 'sponsor', 'companyname', 'sponsoremail', 'companyemail', 'occasion', 'occasiondate', 'occasiontime', 'location', , 'country', 'officeparty', 'milestoneevents', 'achievements'];
 
     // Creates table header
     const headerRow = document.createElement('tr');
