@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cloud 9</title>
+    <meta charset="UTF-8">
+    <!-- Included  stylesheets to maintain same header and navigation style in most of the webpages  -->
+    <link rel="stylesheet" type="text/css" href="./stylesheets/myStyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/fonts.css">
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Heading-->
+    <header>
+        <div class="container">
+            <img src="./images/cloud9.png" alt="Cloud 9 Logo" width="200" height="120">
+            <div>
+                <h1>Cloud9 Balloon Decor</h1>
+            </div>
+        </div>
+    </header>
+
+    <!--Navigation-->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+
+        <div class="subnav">
+            <button class="subnavbtn">Services</button>
+            <div class="subnav-content">
+                <a href="corporate.html">Corporate</a>
+                <a href="rents.html">Rental</a>
+            </div>
+        </div>
+
+        <a href="prices.html">Prices</a>
+        <a href="safety.html">Safety</a>
+        <a href="faq.html">FAQ'S</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <h2>Corporate Events</h1>
+        <table id="corporateTable"></table>
+        <script>
+            fetch('http://localhost:8080/corporateform/corporatelist')
+                .then(response => response.json())
+                .then(data => {
+                    const table = document.getElementById('corporateTable');
+                    const headers = Object.keys(data[0]);
+                    const headerRow = document.createElement('tr');
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        th.textContent = header;
+                        headerRow.appendChild(th);
+                    });
+                    table.appendChild(headerRow);
+
+                    data.forEach(rowData => {
+                        const row = document.createElement('tr');
+                        headers.forEach(header => {
+                            const cell = document.createElement('td');
+                            cell.textContent = rowData[header];
+
+                            // Add an event listener to each email cell
+                            if (header === 'sponsoremail') {
+                                cell.addEventListener('click', () => {
+                                    const email = rowData[header];
+                                    fetch(`http://localhost:8080/personalform/${email}`)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            // Handle the response data here
+                                            console.log(data);
+
+                                            const responseTable = document.createElement('table');
+                                            const responseHeaders = Object.keys(data[0]);
+                                            const responseHeaderRow = document.createElement('tr');
+                                            responseHeaders.forEach(header => {
+                                                const th = document.createElement('th');
+                                                th.textContent = header;
+                                                responseHeaderRow.appendChild(th);
+                                            });
+                                            responseTable.appendChild(responseHeaderRow);
+                                            data.forEach(rowData => {
+                                                const row = document.createElement('tr');
+                                                responseHeaders.forEach(header => {
+                                                    const cell = document.createElement('td');
+                                                    cell.textContent = rowData[header];
+                                                    row.appendChild(cell);
+                                                });
+                                                responseTable.appendChild(row);
+                                            });
+                                            const responseContainer = document.getElementById('responseContainer');
+                                            responseContainer.innerHTML = ''; // Clear previous table
+                                            responseContainer.appendChild(responseTable);
+                                        })
+                                        .catch(error => console.error(error));
+                                });
+                            }
+
+                            row.appendChild(cell);
+                        });
+                        table.appendChild(row);
+                    });
+                })
+                .catch(error => console.error(error));
+        </script>
+
+
+        <!--  -->
+        <h2>Personal Events</h1>
+            <table id="personalTable"></table>
+            <script>
+                fetch('http://localhost:8080/personalform/personallist')
+                    .then(response => response.json())
+                    .then(data => {
+                        const table = document.getElementById('personalTable');
+                        const headers = Object.keys(data[0]);
+                        const headerRow = document.createElement('tr');
+                        headers.forEach(header => {
+                            const th = document.createElement('th');
+                            th.textContent = header;
+                            headerRow.appendChild(th);
+                        });
+                        table.appendChild(headerRow);
+                        data.forEach(rowData => {
+                            const row = document.createElement('tr');
+                            headers.forEach(header => {
+                                const cell = document.createElement('td');
+                                cell.textContent = rowData[header];
+                                row.appendChild(cell);
+                            });
+                            table.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error(error));
+            </script>
+
+            <br>
+            <h2>Corporate Sponsors who planned for personal events</h1>
+                <div id="responseContainer"></div>
+
+                <br />
+                <br />
+
+
+                <footer class="footer">
+                    <div class="footercontent">
+                        <p style="color:white; padding:20px 0 0 40px">Contact us</p>
+                        <div style="margin:2px 0 0 20px">
+                            <a href="https://www.instagram.com/cloud9balloondecor/"><img class="footericon"
+                                    src="./images/insta.png"></a>
+                            <a href="https://www.facebook.com/profile.php?id=100086199496979"><img class="footericon"
+                                    src="./images/fb.png"></a>
+                        </div>
+                    </div>
+                </footer>
+</body>
+</body>
+
+</html>
+
