@@ -63,7 +63,7 @@ function saveCorporateFormData() {
 }
 
 function sendCorporateForm(json) {
-    alert("network call...");
+    alert("network call...II");
     fetch('http://localhost:8080/corporateform/post-corporate-form', {
 
         method: 'POST',

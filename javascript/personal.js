@@ -64,8 +64,7 @@ function savePersonalFormData() {
 function sendPersonalForm(json) {
 	alert("network call...");
 	fetch('http://localhost:8080/personalform/post-personal-form', {
-		// http://localhost:8080/lecture
-		// http://localhost:8080/lecture/post-personal-form
+
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
