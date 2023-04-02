@@ -4,7 +4,6 @@ const personalForm = document.getElementById("personalForm");
 personalForm.addEventListener("submit", function(event) {
 	event.preventDefault();
 
-	alert("Hello new");
 	// Getting the form input values by the below sytax
 	var planNo = document.getElementById("planno").value;
 	var sponsor = document.getElementById("sponsor").value;
@@ -42,9 +41,7 @@ function savePersonalFormData() {
 	const formValues = Object.fromEntries(formData.entries());
 	const json = JSON.stringify(formValues);
 
-	alert("Sending...");
 	sendPersonalForm(json);
-
 
 	var wholedata;
 	// checks if the personalForm JSON obj is already present 
@@ -62,7 +59,6 @@ function savePersonalFormData() {
 }
 
 function sendPersonalForm(json) {
-	alert("network call...");
 	fetch('http://localhost:8080/personalform/post-personal-form', {
 
 		method: 'POST',
