@@ -2,72 +2,71 @@
 <html>
 
 <head>
-    <title>Cloud 9</title>
-    <meta charset="UTF-8">
-    <!-- Included  stylesheets to maintain same header and navigation style in most of the webpages  -->
-    <link rel="stylesheet" type="text/css" href="./stylesheets/myStyleSheet.css">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/fonts.css">
+<title>Cloud 9</title>
+<meta charset="UTF-8">
+<!-- Included  stylesheets to maintain same header and navigation style in most of the webpages  -->
+<link rel="stylesheet" type="text/css"
+	href="./stylesheets/myStyleSheet.css">
+<link rel="stylesheet" type="text/css" href="./stylesheets/fonts.css">
 
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+<style>
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
 
-        th,
-        td {
-            text-align: left;
-            padding: 8px;
-        }
+th, td {
+	text-align: left;
+	padding: 8px;
+}
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2
-        }
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
 
-        tr:hover {
-            background-color: #ddd;
-        }
+tr:hover {
+	background-color: #ddd;
+}
 
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-    </style>
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
 </head>
 
 <body>
-    <!--Heading-->
-    <header>
-        <div class="container">
-            <img src="./images/cloud9.png" alt="Cloud 9 Logo" width="200" height="120">
-            <div>
-                <h1>Cloud9 Balloon Decor</h1>
-            </div>
-        </div>
-    </header>
+	<!--Heading-->
+	<header>
+		<div class="container">
+			<img src="./images/cloud9.png" alt="Cloud 9 Logo" width="200"
+				height="120">
+			<div>
+				<h1>Cloud9 Balloon Decor</h1>
+			</div>
+		</div>
+	</header>
 
-    <!--Navigation-->
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
+	<!--Navigation-->
+	<div class="navbar">
+		<a href="index.html">Home</a> <a href="gallery.html">Gallery</a>
 
-        <div class="subnav">
-            <button class="subnavbtn">Services</button>
-            <div class="subnav-content">
-                <a href="corporate.html">Corporate</a>
-                <a href="rents.html">Rental</a>
-            </div>
-        </div>
+		<div class="subnav">
+			<button class="subnavbtn">Services</button>
+			<div class="subnav-content">
+				<a href="corporate.html">Corporate</a> <a href="rents.html">Rental</a>
+			</div>
+		</div>
 
-        <a href="prices.html">Prices</a>
-        <a href="safety.html">Safety</a>
-        <a href="faq.html">FAQ'S</a>
-        <a href="contact.html">Contact</a>
-    </div>
+		<a href="prices.html">Prices</a> <a href="safety.html">Safety</a> <a
+			href="faq.html">FAQ'S</a> <a href="contact.html">Contact</a>
+	</div>
 
-    <h2>Corporate Events</h1>
-        <table id="corporateTable"></table>
-        <script>
+	<h2>
+		Corporate Events
+		</h1>
+		<table id="corporateTable"></table>
+		<script>
             fetch('http://localhost:8080/corporateform/corporatelist')
                 .then(response => response.json())
                 .then(data => {
@@ -132,10 +131,12 @@
         </script>
 
 
-        <!--  -->
-        <h2>Personal Events</h1>
-            <table id="personalTable"></table>
-            <script>
+		<!--  -->
+		<h2>
+			Personal Events
+			</h1>
+			<table id="personalTable"></table>
+			<script>
                 fetch('http://localhost:8080/personalform/personallist')
                     .then(response => response.json())
                     .then(data => {
@@ -161,27 +162,14 @@
                     .catch(error => console.error(error));
             </script>
 
-            <br>
-            <h2>Corporate Sponsors who planned for personal events</h1>
-                <div id="responseContainer"></div>
+			<br>
+			<h2>
+				Corporate Sponsors who planned for personal events
+				</h1>
+				<div id="responseContainer"></div>
 
-                <br />
-                <br />
-
-
-                <footer class="footer">
-                    <div class="footercontent">
-                        <p style="color:white; padding:20px 0 0 40px">Contact us</p>
-                        <div style="margin:2px 0 0 20px">
-                            <a href="https://www.instagram.com/cloud9balloondecor/"><img class="footericon"
-                                    src="./images/insta.png"></a>
-                            <a href="https://www.facebook.com/profile.php?id=100086199496979"><img class="footericon"
-                                    src="./images/fb.png"></a>
-                        </div>
-                    </div>
-                </footer>
+				<br /> <br />
 </body>
 </body>
-
 </html>
 
