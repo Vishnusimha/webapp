@@ -1,0 +1,63 @@
+/* CSS file for Login page */
+
+/* Set body background color */
+body {
+    background-color: #f1e1f4;
+}
+
+/* Style the login form */
+#login-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the input fields and labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #4b0082;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Style the login button */
+#login-button {
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#login-button:hover {
+    background-color: #8b5fbf;
+}
+
+/* Style the heading */
+h1 {
+    color: #4b0082;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Center the login form on the page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

@@ -67,7 +67,7 @@ th {
 		</h1>
 		<table id="corporateTable"></table>
 		<script>
-            fetch('http://localhost:8080/corporateform/corporatelist')
+            fetch('http://localhost:8081/cloudnine/corporateform/corporatelist')
                 .then(response => response.json())
                 .then(data => {
                     const table = document.getElementById('corporateTable');
@@ -90,7 +90,7 @@ th {
                             if (header === 'sponsoremail') {
                                 cell.addEventListener('click', () => {
                                     const email = rowData[header];
-                                    fetch(`http://localhost:8080/personalform/${email}`)
+                                    fetch(`http://localhost:8081/cloudnine/personalform/${email}`)
                                         .then(response => response.json())
                                         .then(data => {
                                             // Handle the response data here
@@ -137,7 +137,7 @@ th {
 			</h1>
 			<table id="personalTable"></table>
 			<script>
-                fetch('http://localhost:8080/personalform/personallist')
+                fetch('http://localhost:8081/cloudnine/personalform/personallist')
                     .then(response => response.json())
                     .then(data => {
                         const table = document.getElementById('personalTable');
